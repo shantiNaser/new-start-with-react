@@ -1,17 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import image from './picture/colorCycle.jpg'
+
+
+
+
+class ColorList extends React.Component {
+    render() {
+        return (
+            <div className="Color-list">
+                <img src={image} height={100} width={100} alt="" />
+                <h1 class="header">Color Button ... {this.props.name}</h1>
+                <button class="button button1">Green</button>
+                <button class="button button2">Blue</button>
+                <button class="button button3">Red</button>
+            </div >
+        );
+    }
+}
+
+const divStyle = {
+    color: 'blue',
+    backgroundImage: 'url(' + { image } + ')',
+};
+
+function HelloWorldComponent() {
+    return <div style={divStyle}>Hello World!</div>;
+}
+
+// ========================================
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <ColorList />,
+    document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
